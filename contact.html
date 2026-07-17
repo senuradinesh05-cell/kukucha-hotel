@@ -5,181 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Kukucha Hotel</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
-               url("images (3).jpg") no-repeat center center/cover;
-    color:white;
+font-family:'Poppins',sans-serif;
+color:white;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("images (3).jpg") no-repeat center center/cover;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* HEADER */
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    position:fixed;
-    width:100%;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:700;
-    color:#ffd700;
+font-family:'Playfair Display',serif;
+font-size:1.6rem;
+color:#ffd700;
+font-weight:800;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
+.nav-menu{
+display:flex;
+gap:22px;
+list-style:none;
 }
 
-nav ul li a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    position:relative;
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:500;
 }
 
-nav ul li a::after{
-    content:'';
-    position:absolute;
-    width:0%;
-    height:2px;
-    bottom:-5px;
-    left:0;
-    background:#ffd700;
-    transition:0.3s;
+.nav-menu a:hover{
+color:#ffd700;
 }
 
-nav ul li a:hover::after{
-    width:100%;
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
 }
 
-nav ul li a:hover{
-    color:#ffd700;
-}
-
-/* HERO */
-
-.hero{
-    padding:150px 20px 60px;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:50px;
-    color:#ffd700;
-}
-
-.hero p{
-    margin-top:10px;
-    color:#ccc;
+.menu-toggle span{
+width:26px;
+height:3px;
+background:white;
+border-radius:3px;
 }
 
 /* CONTACT SECTION */
 
+.contact-section{
+padding:120px 20px 60px;
+text-align:center;
+}
+
+.contact-section h1{
+font-family:'Playfair Display',serif;
+font-size:2.8rem;
+margin-bottom:20px;
+}
+
+.contact-section h1 span{
+color:#ffd700;
+}
+
 .contact-container{
-    display:flex;
-    justify-content:center;
-    gap:60px;
-    padding:60px 10%;
-    flex-wrap:wrap;
+max-width:800px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
 }
 
-.contact-info{
-    flex:1;
-    min-width:280px;
+.contact-box{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
 }
 
-.info-card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+.contact-box h3{
+color:#ffd700;
+margin-bottom:15px;
 }
 
-.info-card h3{
-    color:#ffd700;
-    margin-bottom:8px;
-}
-
-.contact-form{
-    flex:1;
-    min-width:280px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.contact-form h2{
-    margin-bottom:20px;
-    color:#ffd700;
+.contact-box p{
+color:#ddd;
+margin-bottom:8px;
 }
 
 .contact-form input,
 .contact-form textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:15px;
-    border:none;
-    border-radius:8px;
-    outline:none;
-    font-family:'Poppins',sans-serif;
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:none;
+border-radius:8px;
+font-family:'Poppins',sans-serif;
 }
 
 .contact-form button{
-    padding:12px 30px;
-    border:none;
-    background:#25D366;
-    color:white;
-    font-weight:600;
-    border-radius:30px;
-    cursor:pointer;
-    transition:0.3s;
-    width:100%;
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:#25D366;
+color:white;
+font-weight:600;
+cursor:pointer;
 }
 
 .contact-form button:hover{
-    background:#1ebe5d;
-    transform:translateY(-5px);
+background:#1ebe5d;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:768px){
 
-    nav ul{
-        flex-direction:column;
-        gap:15px;
-    }
+.menu-toggle{
+display:flex;
+}
 
-    .hero h1{
-        font-size:32px;
-    }
+.nav-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:75%;
+max-width:280px;
+height:100vh;
+background:rgba(10,10,10,0.97);
+flex-direction:column;
+justify-content:center;
+gap:28px;
+transition:0.35s;
+}
 
-    .contact-container{
-        flex-direction:column;
-        gap:30px;
-    }
+.nav-menu.active{
+right:0;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+}
+
+.contact-section h1{
+font-size:2rem;
+}
+
 }
 
 </style>
@@ -188,78 +187,94 @@ nav ul li a:hover{
 <body>
 
 <header>
-    <div class="logo">KUKUCHA</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about_us.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="loction.html">Location</a></li>
-        </ul>
-    </nav>
+
+<div class="logo">KUKUCHA</div>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-menu" id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about_us.html">About</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="loction.html">Location</a></li>
+</ul>
+
 </header>
 
-<section class="hero">
-    <h1>Contact Us</h1>
-    <p>We would love to hear from you</p>
-</section>
+<section class="contact-section">
 
-<section class="contact-container">
+<h1>Contact <span>Us</span></h1>
 
-    <div class="contact-info">
-        <div class="info-card">
-            <h3>📍 Address</h3>
-            <p>Kukucha Hotel, Ella, Sri Lanka</p>
-        </div>
+<div class="contact-container">
 
-        <div class="info-card">
-            <h3>📞 Phone</h3>
-            <p><a href="tel:0727610885" style="color:white;text-decoration:none;">0727610885</a></p>
-        </div>
+<div class="contact-box">
+<h3>Our Details</h3>
+<p>📍 Kukucha Hotel, Ella, Sri Lanka</p>
+<p>📞 0727610885</p>
+<p>📧 info@kukucha.com</p>
+<p>⏰ Open 24 Hours</p>
+</div>
 
-        <div class="info-card">
-            <h3>📧 Email</h3>
-            <p>info@kukucha.com</p>
-        </div>
-    </div>
+<div class="contact-box">
+<h3>Send Message via WhatsApp</h3>
 
-    <!-- UPDATED FORM -->
-    <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <input type="tel" id="phone" placeholder="Your Phone">
-            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send via WhatsApp</button>
-        </form>
-    </div>
+<form class="contact-form" id="contactForm">
+
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Your Phone" required>
+<textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send via WhatsApp</button>
+
+</form>
+
+</div>
+
+</div>
 
 </section>
 
 <script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let message = document.getElementById("message").value;
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-    let phoneNumber = "94727610885"; 
-
-    let whatsappMessage =
-        "Hello Kukucha Hotel,%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Email: " + email + "%0A" +
-        "Phone: " + phone + "%0A" +
-        "Message: " + message;
-
-    let url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
-
-    window.open(url, "_blank");
+menuToggle.addEventListener('click', () => {
+menuToggle.classList.toggle('active');
+navMenu.classList.toggle('active');
 });
+
+document.querySelectorAll('.nav-menu a').forEach(link => {
+link.addEventListener('click', () => {
+menuToggle.classList.remove('active');
+navMenu.classList.remove('active');
+});
+});
+
+/* WhatsApp form */
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let message=document.getElementById("message").value;
+
+let text=
+"Hello Kukucha Hotel,%0A%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Message: "+message;
+
+window.open("https://wa.me/94727610885?text="+text,"_blank");
+
+});
+
 </script>
 
 </body>
