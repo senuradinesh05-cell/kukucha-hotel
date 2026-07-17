@@ -5,192 +5,140 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu | Kukucha Hotel</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
-               url("images (3).jpg") no-repeat center center/cover;
-    color:white;
+font-family:'Poppins',sans-serif;
+color:white;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("images (3).jpg") no-repeat center center/cover;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-/* ================= NAVBAR ================= */
-
+/* HEADER */
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    position:fixed;
-    width:100%;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:700;
-    color:#ffd700;
+font-family:'Playfair Display',serif;
+font-size:1.6rem;
+color:#ffd700;
+font-weight:800;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:30px;
+.nav-menu{
+display:flex;
+gap:22px;
+list-style:none;
 }
 
-nav ul li a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    position:relative;
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:500;
 }
 
-nav ul li a::after{
-    content:'';
-    position:absolute;
-    width:0%;
-    height:2px;
-    bottom:-5px;
-    left:0;
-    background:#ffd700;
-    transition:0.3s;
+.nav-menu a:hover{color:#ffd700;}
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
 }
 
-nav ul li a:hover::after{
-    width:100%;
+.menu-toggle span{
+width:26px;
+height:3px;
+background:white;
+border-radius:3px;
 }
 
-nav ul li a:hover{
-    color:#ffd700;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    padding:150px 20px 80px;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:50px;
-    color:#ffd700;
-    animation:fadeDown 1.5s ease;
-}
-
-.hero p{
-    margin-top:10px;
-    color:#ccc;
-    animation:fadeUp 1.5s ease;
-}
-
-/* ================= MENU SECTION ================= */
+/* MENU SECTION */
 
 .menu-section{
-    padding:60px 10%;
+padding:120px 20px 60px;
+text-align:center;
 }
 
-.category{
-    margin-bottom:60px;
+.menu-section h1{
+font-family:'Playfair Display',serif;
+font-size:2.8rem;
+margin-bottom:40px;
 }
 
-.category h2{
-    font-size:32px;
-    margin-bottom:30px;
-    color:#ffd700;
-    border-left:5px solid #ffd700;
-    padding-left:15px;
+.menu-section h1 span{color:#ffd700;}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
 }
 
-/* Menu Grid */
-.menu-items{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-/* Card */
 .menu-card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    border-radius:15px;
-    padding:20px;
-    transition:0.4s;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    animation:fadeUp 1.2s ease;
-}
-
-.menu-card:hover{
-    transform:translateY(-10px);
-    background:rgba(255,215,0,0.08);
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+backdrop-filter:blur(10px);
 }
 
 .menu-card h3{
-    color:#ffd700;
-    margin-bottom:10px;
+color:#ffd700;
+margin-bottom:10px;
 }
 
 .menu-card p{
-    color:#ccc;
-    font-size:14px;
+font-size:0.95rem;
+color:#ddd;
+margin-bottom:8px;
 }
 
-.price{
-    margin-top:15px;
-    font-weight:600;
-    font-size:18px;
-    color:white;
+.menu-card span{
+font-weight:600;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* ================= RESPONSIVE ================= */
+/* MOBILE */
 
 @media(max-width:768px){
 
-    nav ul{
-        flex-direction:column;
-        gap:15px;
-    }
+.menu-toggle{display:flex;}
 
-    .hero h1{
-        font-size:32px;
-    }
+.nav-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:75%;
+max-width:280px;
+height:100vh;
+background:rgba(10,10,10,0.97);
+flex-direction:column;
+justify-content:center;
+gap:28px;
+transition:0.35s;
+}
 
-    .category h2{
-        font-size:24px;
-    }
+.nav-menu.active{right:0;}
+
+.menu-section h1{font-size:2rem;}
+
 }
 
 </style>
@@ -199,74 +147,69 @@ nav ul li a:hover{
 <body>
 
 <header>
-    <div class="logo">KUKUCHA</div>
-    <nav>
-        <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="about_us.html">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="loction.html">Location</a></li>
-        </ul>
-    </nav>
+<div class="logo">KUKUCHA</div>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<ul class="nav-menu" id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about_us.html">About</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="loction.html">Location</a></li>
+</ul>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Our Signature Menu</h1>
-    <p>Fresh Ingredients • Authentic Flavours • Premium Experience</p>
-</section>
-
-<!-- MENU -->
 <section class="menu-section">
 
-    <!-- Starters -->
-    <div class="category">
-        <h2>Starters</h2>
-        <div class="menu-items">
-            <div class="menu-card">
-                <h3>Garlic Butter Prawns</h3>
-                <p>Fresh prawns sautéed in creamy garlic butter sauce.</p>
-                <div class="price">Rs. 2500</div>
-            </div>
+<h1>Our <span>Menu</span></h1>
 
-            <div class="menu-card">
-                <h3>Chicken Spring Rolls</h3>
-                <p>Crispy rolls stuffed with spicy chicken filling.</p>
-                <div class="price">Rs. 1800</div>
-            </div>
-        </div>
-    </div>
+<div class="menu-grid">
 
-    <!-- Main Course -->
-    <div class="category">
-        <h2>Main Course</h2>
-        <div class="menu-items">
-            <div class="menu-card">
-                <h3>Grilled Chicken Steak</h3>
-                <p>Juicy grilled chicken served with creamy mushroom sauce.</p>
-                <div class="price">Rs. 4500</div>
-            </div>
+<div class="menu-card">
+<h3>Grilled Chicken</h3>
+<p>Juicy grilled chicken with special spices.</p>
+<span>Rs. 2500</span>
+</div>
 
-            <div class="menu-card">
-                <h3>Seafood Fried Rice</h3>
-                <p>Flavorful rice mixed with fresh seafood and spices.</p>
-                <div class="price">Rs. 3800</div>
-            </div>
-        </div>
-    </div>
+<div class="menu-card">
+<h3>Seafood Fried Rice</h3>
+<p>Fresh seafood mixed with aromatic rice.</p>
+<span>Rs. 3000</span>
+</div>
 
-    <!-- Desserts -->
-    <div class="category">
-        <h2>Desserts</h2>
-        <div class="menu-items">
-            <div class="menu-card">
-                <h3>Chocolate Lava Cake</h3>
-                <p>Warm chocolate cake with a molten center.</p>
-                <div class="price">Rs. 1500</div>
-            </div>
+<div class="menu-card">
+<h3>Chocolate Dessert</h3>
+<p>Rich chocolate cake with creamy topping.</p>
+<span>Rs. 1500</span>
+</div>
 
-            <div class="menu-card">
-                <h3>Classic Cheesecake</h3>
-                <p>Rich and creamy cheesecake with berry topping.</p>
-                <div 
+</div>
+
+</section>
+
+<script>
+
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+menuToggle.classList.toggle('active');
+navMenu.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-menu a').forEach(link => {
+link.addEventListener('click', () => {
+menuToggle.classList.remove('active');
+navMenu.classList.remove('active');
+});
+});
+
+</script>
+
+</body>
+</html>
