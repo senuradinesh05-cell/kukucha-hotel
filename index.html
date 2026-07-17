@@ -3,265 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KUKUCHA HOTEL WEBSITE</title>
-
-<meta name="google-site-verification" content="daG-ZMBh4VxVxvmySnp4A0E0udVmfNZT0luy0l8sCmI" />
-<meta name="keywords" content="Kukucha Hotel, Ella hotel, Sri Lanka luxury hotel, hotel in Ella, Kukucha restaurant, book room Ella, Ella accommodation">
+<title>Kukucha Hotel | Ella Sri Lanka</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-font-family:'Poppins',sans-serif;
-color:white;
-min-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("images (3).jpg") no-repeat center center/cover;
-overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+               url("images (3).jpg") no-repeat center center/cover;
+    background-attachment:fixed;
+    overflow-x:hidden;
 }
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(10px);
 }
 
 .logo{
-font-family:'Playfair Display',serif;
-font-size:1.8rem;
-color:#ffd700;
+    font-family:'Playfair Display',serif;
+    font-size:1.6rem;
+    color:#ffd700;
+    font-weight:800;
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:30px;
+/* Desktop nav */
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    list-style:none;
 }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-position:relative;
+.nav-menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.95rem;
 }
 
-nav ul li a::after{
-content:'';
-position:absolute;
-width:0%;
-height:2px;
-left:0;
-bottom:-5px;
-background:#ffd700;
-transition:0.3s;
+.nav-menu a:hover{
+    color:#ffd700;
 }
-
-nav ul li a:hover::after{width:100%;}
-nav ul li a:hover{color:#ffd700;}
 
 #btn{
-background:#ffd700;
-color:black;
-padding:10px 25px;
-border:none;
-border-radius:30px;
-cursor:pointer;
-font-weight:600;
+    background:#ffd700;
+    color:#000;
+    border:none;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* Hamburger */
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    z-index:1100;
+}
+
+.menu-toggle span{
+    width:26px;
+    height:3px;
+    background:white;
+    border-radius:3px;
+    transition:0.3s;
 }
 
 /* HERO */
 .hero{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-min-height:100vh;
-padding:120px 20px;
-animation:fadeIn 1.2s ease;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 40px;
 }
 
 .hero h1{
-font-size:4rem;
-font-family:'Playfair Display',serif;
+    font-family:'Playfair Display',serif;
+    font-size:3.2rem;
+    line-height:1.2;
+    margin-bottom:18px;
 }
 
-.hero span{color:#ffd700;}
+.hero h1 span{
+    color:#ffd700;
+}
 
 .hero p{
-margin-top:20px;
-max-width:700px;
-color:#ddd;
+    max-width:700px;
+    color:#ddd;
+    font-size:1.05rem;
+    line-height:1.7;
 }
 
 /* BOOKING MODAL */
 .booking-modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.85);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:2000;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+    padding:15px;
 }
 
 .booking-box{
-background:#111;
-padding:30px;
-border-radius:15px;
-width:90%;
-max-width:400px;
-position:relative;
+    background:#111;
+    width:100%;
+    max-width:400px;
+    border-radius:15px;
+    padding:25px;
+    position:relative;
 }
 
 .booking-box h2{
-color:#ffd700;
-margin-bottom:20px;
-text-align:center;
+    color:#ffd700;
+    text-align:center;
+    margin-bottom:18px;
 }
 
 .booking-box input,
 .booking-box select{
-width:100%;
-padding:10px;
-margin-bottom:15px;
-border:none;
-border-radius:8px;
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:8px;
+    font-family:'Poppins',sans-serif;
 }
 
 .booking-box button{
-width:100%;
-padding:10px;
-background:#25D366;
-border:none;
-color:white;
-font-weight:600;
-border-radius:30px;
-cursor:pointer;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:#25D366;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
 }
 
 .close{
-position:absolute;
-right:20px;
-top:10px;
-font-size:25px;
-cursor:pointer;
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:28px;
+    cursor:pointer;
+    color:white;
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
-}
+/* ================= MOBILE FIX ================= */
+@media (max-width:768px){
 
-/* RESPONSIVE */
-@media(max-width:768px){
-.hero h1{font-size:2.3rem;}
-nav ul{flex-direction:column;}
-}
+    .menu-toggle{
+        display:flex;
+    }
 
+    .nav-menu{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:75%;
+        max-width:280px;
+        height:100vh;
+        background:rgba(10,10,10,0.97);
+        flex-direction:column;
+        justify-content:center;
+        gap:28px;
+        transition:right 0.35s ease;
+        z-index:1050;
+        padding:20px;
+    }
+
+    .nav-menu.active{
+        right:0;
+    }
+
+    .nav-menu a{
+        font-size:1.15rem;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:0.95rem;
+        padding:0 5px;
+    }
+
+    /* Hamburger to X */
+    .menu-toggle.active span:nth-child(1){
+        transform:rotate(45deg) translate(5px,6px);
+    }
+    .menu-toggle.active span:nth-child(2){
+        opacity:0;
+    }
+    .menu-toggle.active span:nth-child(3){
+        transform:rotate(-45deg) translate(5px,-6px);
+    }
+}
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="logo">KUKUCHA</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about_us.html">About</a></li>
-<li><a href="menu.html">Menu</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="loction.html">location</a>
-<li><button id="btn" onclick="openBooking()">Book Now</button></li>
-</ul>
-</nav>
+    <div class="logo">KUKUCHA</div>
+
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><button id="btn" onclick="openBooking()">Book Now</button></li>
+    </ul>
 </header>
 
 <section class="hero">
-<h1>Come <span>Hungry</span>, Leave <span>Happy</span></h1>
-<p>Experience premium hospitality and unforgettable moments at Kukucha Hotel.</p>
+    <h1>Come <span>Hungry</span>, Leave <span>Happy</span></h1>
+    <p>Experience premium hospitality and unforgettable moments at Kukucha Hotel.</p>
 </section>
 
 <!-- BOOKING MODAL -->
 <div class="booking-modal" id="bookingModal">
-<div class="booking-box">
-<span class="close" onclick="closeBooking()">&times;</span>
-<h2>Book Now</h2>
-
-<form id="bookingForm">
-<select id="type" required>
-<option value="">Select Booking Type</option>
-<option value="Room Booking">Room Booking</option>
-<option value="Table Reservation">Table Reservation</option>
-</select>
-
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="tel" id="phone" placeholder="Your Phone" required>
-<input type="date" id="date" required>
-<input type="time" id="time" required>
-<input type="number" id="people" placeholder="Number of People" required>
-
-<button type="submit">Confirm via WhatsApp</button>
-</form>
-</div>
+    <div class="booking-box">
+        <span class="close" onclick="closeBooking()">&times;</span>
+        <h2>Book Now</h2>
+        <form id="bookingForm">
+            <select id="type" required>
+                <option value="">Select Booking Type</option>
+                <option value="Room Booking">Room Booking</option>
+                <option value="Table Reservation">Table Reservation</option>
+            </select>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Your Phone" required>
+            <input type="date" id="date" required>
+            <input type="time" id="time" required>
+            <input type="number" id="people" placeholder="Number of People" required>
+            <button type="submit">Confirm via WhatsApp</button>
+        </form>
+    </div>
 </div>
 
 <script>
+// Mobile menu
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-/* OPEN CLOSE MODAL */
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when link clicked
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Booking modal
 function openBooking(){
-document.getElementById("bookingModal").style.display="flex";
+    document.getElementById('bookingModal').style.display = 'flex';
+    menuToggle.classList.remove('active');
+    navMenu.classList.remove('active');
 }
 
 function closeBooking(){
-document.getElementById("bookingModal").style.display="none";
+    document.getElementById('bookingModal').style.display = 'none';
 }
 
-/* WHATSAPP SEND */
-document.getElementById("bookingForm").addEventListener("submit",function(e){
-e.preventDefault();
+// WhatsApp booking
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
 
-let type=document.getElementById("type").value;
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let date=document.getElementById("date").value;
-let time=document.getElementById("time").value;
-let people=document.getElementById("people").value;
+    let type = document.getElementById('type').value;
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let date = document.getElementById('date').value;
+    let time = document.getElementById('time').value;
+    let people = document.getElementById('people').value;
 
-let whatsapp="94727610885";
+    let message =
+        "Hello Kukucha Hotel,%0A%0A" +
+        "Booking Type: " + type + "%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Date: " + date + "%0A" +
+        "Time: " + time + "%0A" +
+        "People: " + people;
 
-let message=
-"Hello Kukucha Hotel,%0A%0A"+
-"Booking Type: "+type+"%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Date: "+date+"%0A"+
-"Time: "+time+"%0A"+
-"People: "+people;
-
-let url="https://wa.me/"+whatsapp+"?text="+message;
-
-window.open(url,"_blank");
-
-closeBooking();
+    window.open("https://wa.me/94727610885?text=" + message, "_blank");
+    closeBooking();
 });
-
 </script>
 
 </body>
