@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUKUCHA HOTEL WEBSITE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+color:white;
+min-height:100vh;
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("images (3).jpg") no-repeat center center/cover;
+overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:1.8rem;
+color:#ffd700;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+position:relative;
+}
+
+nav ul li a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+left:0;
+bottom:-5px;
+background:#ffd700;
+transition:0.3s;
+}
+
+nav ul li a:hover::after{width:100%;}
+nav ul li a:hover{color:#ffd700;}
+
+#btn{
+background:#ffd700;
+color:black;
+padding:10px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* HERO */
+.hero{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+min-height:100vh;
+padding:120px 20px;
+animation:fadeIn 1.2s ease;
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Playfair Display',serif;
+}
+
+.hero span{color:#ffd700;}
+
+.hero p{
+margin-top:20px;
+max-width:700px;
+color:#ddd;
+}
+
+/* BOOKING MODAL */
+.booking-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.booking-box{
+background:#111;
+padding:30px;
+border-radius:15px;
+width:90%;
+max-width:400px;
+position:relative;
+}
+
+.booking-box h2{
+color:#ffd700;
+margin-bottom:20px;
+text-align:center;
+}
+
+.booking-box input,
+.booking-box select{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:none;
+border-radius:8px;
+}
+
+.booking-box button{
+width:100%;
+padding:10px;
+background:#25D366;
+border:none;
+color:white;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+}
+
+.close{
+position:absolute;
+right:20px;
+top:10px;
+font-size:25px;
+cursor:pointer;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:2.3rem;}
+nav ul{flex-direction:column;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">KUKUCHA</div>
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Menu</a></li>
+<li><a href="#">Contact</a></li>
+<li><button id="btn" onclick="openBooking()">Book Now</button></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Come <span>Hungry</span>, Leave <span>Happy</span></h1>
+<p>Experience premium hospitality and unforgettable moments at Kukucha Hotel.</p>
+</section>
+
+<!-- BOOKING MODAL -->
+<div class="booking-modal" id="bookingModal">
+<div class="booking-box">
+<span class="close" onclick="closeBooking()">&times;</span>
+<h2>Book Now</h2>
+
+<form id="bookingForm">
+<select id="type" required>
+<option value="">Select Booking Type</option>
+<option value="Room Booking">Room Booking</option>
+<option value="Table Reservation">Table Reservation</option>
+</select>
+
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Your Phone" required>
+<input type="date" id="date" required>
+<input type="time" id="time" required>
+<input type="number" id="people" placeholder="Number of People" required>
+
+<button type="submit">Confirm via WhatsApp</button>
+</form>
+</div>
+</div>
+
+<script>
+
+/* OPEN CLOSE MODAL */
+function openBooking(){
+document.getElementById("bookingModal").style.display="flex";
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none";
+}
+
+/* WHATSAPP SEND */
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+let type=document.getElementById("type").value;
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
+let people=document.getElementById("people").value;
+
+let whatsapp="94727610885";
+
+let message=
+"Hello Kukucha Hotel,%0A%0A"+
+"Booking Type: "+type+"%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Date: "+date+"%0A"+
+"Time: "+time+"%0A"+
+"People: "+people;
+
+let url="https://wa.me/"+whatsapp+"?text="+message;
+
+window.open(url,"_blank");
+
+closeBooking();
+});
+
+</script>
+
+</body>
+</html>

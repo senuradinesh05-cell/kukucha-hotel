@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu | Kukucha Hotel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
+               url("images (3).jpg") no-repeat center center/cover;
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#ffd700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#ffd700;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a:hover{
+    color:#ffd700;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:150px 20px 80px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+    color:#ffd700;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#ccc;
+    animation:fadeUp 1.5s ease;
+}
+
+/* ================= MENU SECTION ================= */
+
+.menu-section{
+    padding:60px 10%;
+}
+
+.category{
+    margin-bottom:60px;
+}
+
+.category h2{
+    font-size:32px;
+    margin-bottom:30px;
+    color:#ffd700;
+    border-left:5px solid #ffd700;
+    padding-left:15px;
+}
+
+/* Menu Grid */
+.menu-items{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* Card */
+.menu-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border-radius:15px;
+    padding:20px;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    animation:fadeUp 1.2s ease;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,215,0,0.08);
+}
+
+.menu-card h3{
+    color:#ffd700;
+    margin-bottom:10px;
+}
+
+.menu-card p{
+    color:#ccc;
+    font-size:14px;
+}
+
+.price{
+    margin-top:15px;
+    font-weight:600;
+    font-size:18px;
+    color:white;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .category h2{
+        font-size:24px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KUKUCHA</div>
+    <nav>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about_us.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="loction.html">Location</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Our Signature Menu</h1>
+    <p>Fresh Ingredients • Authentic Flavours • Premium Experience</p>
+</section>
+
+<!-- MENU -->
+<section class="menu-section">
+
+    <!-- Starters -->
+    <div class="category">
+        <h2>Starters</h2>
+        <div class="menu-items">
+            <div class="menu-card">
+                <h3>Garlic Butter Prawns</h3>
+                <p>Fresh prawns sautéed in creamy garlic butter sauce.</p>
+                <div class="price">Rs. 2500</div>
+            </div>
+
+            <div class="menu-card">
+                <h3>Chicken Spring Rolls</h3>
+                <p>Crispy rolls stuffed with spicy chicken filling.</p>
+                <div class="price">Rs. 1800</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Course -->
+    <div class="category">
+        <h2>Main Course</h2>
+        <div class="menu-items">
+            <div class="menu-card">
+                <h3>Grilled Chicken Steak</h3>
+                <p>Juicy grilled chicken served with creamy mushroom sauce.</p>
+                <div class="price">Rs. 4500</div>
+            </div>
+
+            <div class="menu-card">
+                <h3>Seafood Fried Rice</h3>
+                <p>Flavorful rice mixed with fresh seafood and spices.</p>
+                <div class="price">Rs. 3800</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="category">
+        <h2>Desserts</h2>
+        <div class="menu-items">
+            <div class="menu-card">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Warm chocolate cake with a molten center.</p>
+                <div class="price">Rs. 1500</div>
+            </div>
+
+            <div class="menu-card">
+                <h3>Classic Cheesecake</h3>
+                <p>Rich and creamy cheesecake with berry topping.</p>
+                <div 

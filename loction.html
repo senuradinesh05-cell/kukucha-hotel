@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Location | Kukucha Hotel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)),
+               url("images (6).jpg") no-repeat center center/cover;
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#ffd700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#ffd700;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a:hover{
+    color:#ffd700;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:150px 20px 60px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+    color:#ffd700;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:10px;
+    color:#ccc;
+    animation:fadeUp 1.5s ease;
+}
+
+/* ================= LOCATION SECTION ================= */
+
+.location-container{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    padding:60px 10%;
+    flex-wrap:wrap;
+}
+
+/* Info Box */
+
+.location-info{
+    flex:1;
+    min-width:280px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    animation:fadeUp 1.5s ease;
+}
+
+.location-info h2{
+    color:#ffd700;
+    margin-bottom:20px;
+}
+
+.location-info p{
+    margin-bottom:15px;
+    color:#ddd;
+}
+
+.location-info a{
+    color:#ffd700;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.location-info a:hover{
+    text-decoration:underline;
+}
+
+/* Map */
+
+.map-container{
+    flex:1;
+    min-width:280px;
+    animation:fadeUp 1.5s ease;
+}
+
+.map-container iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .location-container{
+        flex-direction:column;
+        gap:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KUKUCHA</div>
+    <nav>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about_us.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="location.html">Location</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Find Us Here</h1>
+    <p>Visit Kukucha Hotel for an unforgettable experience</p>
+</section>
+
+<!-- LOCATION SECTION -->
+<section class="location-container">
+
+    <div class="location-info">
+        <h2>Our Location</h2>
+        <p>📍 Kukucha Hotel, Ella, Sri Lanka</p>
+        <p>📞 <a href="tel:0727610885">0727610885</a></p>
+        <p>📧 info@kukucha.com</p>
+        <p>⏰ Open 24 Hours - 7 Days a Week</p>
+
+        <p>
+            👉 <a href="https://www.google.com/maps" target="_blank">
+            Open in Google Maps
+            </a>
+        </p>
+    </div>
+
+    <div class="map-container">
+        <!-- Google Map Embed -->
+        <iframe 
+        src="https://www.google.com/maps?q=Ella,Sri+Lanka&output=embed">
+        </iframe>
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Kukucha Hotel</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                url("images (6).jpg") no-repeat center center/cover;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#ffd700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#ffd700;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a:hover{
+    color:#ffd700;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px 0 20px;
+}
+
+.hero h1{
+    font-size:55px;
+    color:#ffd700;
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+    animation:fadeUp 1.5s ease;
+}
+
+/* ================= ABOUT CONTENT ================= */
+
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:80px 10%;
+    flex-wrap:wrap;
+}
+
+.about-image img{
+    width:450px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    transition:0.4s;
+}
+
+.about-image img:hover{
+    transform:scale(1.05);
+}
+
+.about-text{
+    max-width:600px;
+    animation:fadeUp 1.5s ease;
+}
+
+.about-text h2{
+    font-size:35px;
+    margin-bottom:20px;
+    color:#ffd700;
+}
+
+.about-text p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+/* ================= STATS SECTION ================= */
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:80px;
+    padding:60px 10%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    flex-wrap:wrap;
+}
+
+.stat{
+    text-align:center;
+    animation:fadeUp 1.5s ease;
+}
+
+.stat h3{
+    font-size:40px;
+    color:#ffd700;
+}
+
+.stat p{
+    margin-top:5px;
+    color:#ccc;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:100%;
+        max-width:400px;
+    }
+
+    .stats{
+        gap:40px;
+    }
+}
+
+@media(max-width:600px){
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero{
+        height:auto;
+        padding-top:150px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .stat h3{
+        font-size:28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KUKUCHA</div>
+    <nav>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about_us.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="loction.html">Location</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div>
+        <h1>Our Story of Passion & Hospitality</h1>
+        <p>Creating unforgettable experiences with every visit.</p>
+    </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about-container">
+    
+    <div class="about-image">
+        <img src="images (4).jpg" alt="Hotel Image">
+    </div>
+
+    <div class="about-text">
+        <h2>Welcome to Kukucha Hotel</h2>
+        <p>
+        At Kukucha, we believe hospitality is more than service — it is an experience.
+        From carefully crafted dishes to a warm and elegant atmosphere, every detail 
+        is designed to make you feel at home.
+
+        Our journey started with a simple dream: to create a place where flavors, 
+        comfort, and culture come together beautifully. Today, Kukucha stands as 
+        a symbol of quality, creativity, and genuine care for our guests.
+        </p>
+    </div>
+
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats">
+
+    <div class="stat">
+        <h3>10+</h3>
+        <p>Years of Excellence</p>
+    </div>
+
+    <div class="stat">
+        <h3>5000+</h3>
+        <p>Happy Customers</p>
+    </div>
+
+    <div class="stat">
+        <h3>24/7</h3>
+        <p>Premium Service</p>
+    </div>
+
+    <div class="stat">
+        <h3>50+</h3>
+        <p>Expert Staff</p>
+    </div>
+
+</section>
+
+</body>
+</html>
